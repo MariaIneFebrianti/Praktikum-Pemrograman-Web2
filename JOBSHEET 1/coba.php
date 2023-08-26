@@ -15,7 +15,7 @@
             $isPrime = true; // Inisialisasi variabel $isPrime sebagai true
             $divisor = 2; // Inisialisasi variabel $divisor dengan nilai 2
 
-            // Periksa apakah angka ini bilangan prima
+            // Periksa aakah angka ini bilangan prima
             while ($divisor < $number) {
                 if ($number % $divisor == 0) { // Jika angka dibagi dengan divisor tanpa sisa
                     $isPrime = false; // Tandai bahwa angka bukan bilangan prima
