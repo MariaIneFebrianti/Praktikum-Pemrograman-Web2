@@ -3,38 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Branching</title>
+    <title>Bilangan Prima</title>
 </head>
 <body>
-    <form method="post" action="">
-        <table>
-            <tr>
-                <td>Masukkan nilai x:</td>
-                <td><input type="number" name="x"></td>
-            </tr>
-            <tr>
-                <td> </td>
-                <td colspan="2"><input type="submit" value="Submit"></td>
-            </tr>
-        </table>
-    </form>
-
     <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $x = $_POST["x"];
-            echo "<table>";
-            echo "<tr><td>Nilai x</td><td>= $x</td></tr><tr><td colspan='2'><br></td></tr>";
+        echo "Bilangan Prima kurang dari 20: <br>";
 
-            if ($x > 0) {
-                echo "<tr><td colspan='2'>$x adalah Bilangan Positif</td></tr>";
-            } else if ($x < 0) {
-                echo "<tr><td colspan='2'>$x adalah Bilangan Negatif</td></tr>";
-            } else {
-                echo "<tr><td colspan='2'>$x adalah Bilangan Nol</td></tr>";
+        $number = 2; // Inisialisasi variabel $number dengan nilai 2
+
+        do {
+            $isPrime = true; // Inisialisasi variabel $isPrime sebagai true
+            $divisor = 2; // Inisialisasi variabel $divisor dengan nilai 2
+
+            // Periksa apakah angka ini bilangan prima
+            while ($divisor < $number) {
+                if ($number % $divisor == 0) { // Jika angka dibagi dengan divisor tanpa sisa
+                    $isPrime = false; // Tandai bahwa angka bukan bilangan prima
+                    break; // Hentikan perulangan, tidak perlu memeriksa lebih lanjut
+                }
+                $divisor++; // Naikkan nilai divisor untuk memeriksa pembagi selanjutnya
             }
 
-            echo "</table>";
-        }
+            // Jika angka adalah bilangan prima, tampilkan
+            if ($isPrime) {
+                echo "$number <br>"; // Tampilkan angka yang merupakan bilangan prima
+            }
+
+            $number++; // Naikkan nilai $number untuk memeriksa angka berikutnya
+        } while ($number < 20); // Ulangi perulangan selama angka kurang dari 20
     ?>
 </body>
 </html>
