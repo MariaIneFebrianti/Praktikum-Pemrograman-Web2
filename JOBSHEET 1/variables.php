@@ -11,9 +11,9 @@
         $string = "Praktikum Pemrograman Web II";
         $boolean = true;
 
-        echo "Ini adalah contoh Integer : $integer <br>";
-        echo "Ini adalah contoh String : $string <br>";
-        echo "Ini adalah contoh B oolean : $boolean <br>";
+        echo "Ini contoh Integer : $integer <br>";
+        echo "Ini contoh String : $string <br>";
+        echo "Ini contoh Boolean : $boolean <br>";
     ?>
 </body>
 </html>
