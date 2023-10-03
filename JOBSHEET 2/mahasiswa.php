@@ -50,7 +50,7 @@
 
     // menampilkan objek ke layar
     echo $nama_mahasiswa->tampil_nama()."<br>";
-    echo $nama_mahasiswa->tampil_alamat()."<br><hr>";
+    echo $nama_mahasiswa->tampil_alamat()."<br><br>";
     echo $nama_dosen->tampil_nama()."<br>";
     echo $nama_dosen->tampil_prodi();
 

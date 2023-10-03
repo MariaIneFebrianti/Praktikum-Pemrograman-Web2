@@ -20,8 +20,8 @@
     </form>
 
     <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $x = $_POST["x"];
+        if ($_SERVER["REQUEST_METHOD"] == "POST") { //mengecek permintaan yang diterima dengan metode POST
+            $x = $_POST["x"]; //variabel x adalah nilai yang dikirim melalui form dengan nama x
             echo "Nilai x = $x <br>";
 
             if ($x > 0) {

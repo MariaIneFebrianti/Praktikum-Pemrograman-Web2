@@ -1,21 +1,30 @@
  <?php
     class manusia{
-        public $nama_saya;
+        private $nama_saya; //hak akses hanya bisa diakses pada class itu sendiri
 
+         //method
         function panggil_nama($saya)
         {
             $this->nama_saya=$saya;
         }
+        
+        function ambil_nama(){
+            return $this->nama_saya;
+        }
     }
 
     // class turunan atau sub class dari manusia
-    class mahasiswa extends manusia
-    {
-        public $nama_mahasiswa;
+    class mahasiswa extends manusia{
+        protected $nama_mahasiswa;
 
+         //method
         function panggil_mahasiswa($mahasiswa)
         {
             $this->nama_mahasiswa=$mahasiswa;
+        }
+
+        function ambil_mahasiswa(){
+            return $this->nama_mahasiswa;
         }
     }
 
@@ -26,9 +35,6 @@
     $informatika->panggil_mahasiswa("Febrianti");
 
     // tampilkan isi dari property
-    echo "Nama Depan saya : ".$informatika->nama_saya."<br>";
-    echo "Nama Belakang : ".$informatika->nama_mahasiswa."<br>";
+    echo "Nama Depan saya : ".$informatika->ambil_nama()."<br>";
+    echo "Nama Belakang : ".$informatika->ambil_mahasiswa()."<br>";
  ?>
- 
-<!-- TUGAS MEMPRAKTIKKAN ENKAPSULASI PROTECTED DAN PRIVATE KE DALAM KELAS PEWARISAN
-DI SUMULASIKAN -->

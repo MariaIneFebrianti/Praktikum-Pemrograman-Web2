@@ -7,24 +7,6 @@
 </head>
 <body>
     <?php
-    // function persegi($s){
-    //     return $s*$s;
-    // }
-    
-    // function persegi_panjang($p, $l){
-    //     return $p*$l;
-    // }
-
-    // function lingkaran($r){
-    //     return 3.14*$r*$r;
-    // }
-    // echo "FUNCTION SECARA STATIS <br><br>";
-    // echo "Luas persegi = ".persegi(5)."<br>";
-    // echo "Luas persegi panjang = ".persegi_panjang(5, 2)."<br>";
-    // echo "Luas lingkaran = ".lingkaran(7)."<br>";
-    ?>
-    
-    <?php
         function persegi($s){
             return $s*$s;
         }
@@ -37,25 +19,7 @@
             return 3.14*$r*$r;
         }
     ?>
-        <!-- <form method="post" action="">
-            <table>
-                <tr>
-                    <td>Masukkan Sisi = </td>
-                    <td><input type="number" name="s"></td>
-                </tr>
-                <tr>
-                    <td> </td>
-                    <td colspan="2"><input type="submit" value="Hitung Luas"></td>
-                </tr>
-            </table>
-        </form> -->
-    <?php
-        // if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        //     $s = $_POST["s"];
-        //     echo "Luas Persegi &nbsp; &nbsp; = ".persegi($s);
-        // }
-    ?>
-    <!-- <br><br> -->
+
         <form method="post" action="">
             <table>
                 <tr>
@@ -67,16 +31,22 @@
                    <td><input type="number" name="l"></td> 
                 </tr>
                 <tr>
+                    <td>Masukkan Radius = </td>
+                   <td><input type="number" name="r"></td> 
+                </tr>
+                <tr>
                     <td> </td>
                     <td colspan="2"><input type="submit" value="Hitung Luas"></td>
                 </tr>
             </table>
         </form>
     <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") { //mengecek permintaan yang diterima dengan metode POST
             $p = $_POST["p"];
             $l = $_POST["l"];
-            echo "Luas Persegi Panjang = ".persegi_panjang($p, $l);
+            $r = $_POST["r"];
+            echo "<br>"."Luas Persegi Panjang = ".persegi_panjang($p, $l);
+            echo "<br>"."Luas Lingkaran = ".lingkaran($r);
         }
     ?>
 
